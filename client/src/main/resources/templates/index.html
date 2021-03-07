@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>软件工程专业实验示范中心</title>
+    <link rel="stylesheet" href="layui/css/layui.css" th:href="@{layui/css/layui.css}">
+    <link rel="stylesheet" href="css/mian.css" th:href="@{css/mian.css}"/>
+</head>
+
+<body class="page">
+<!-- 头部  -->
+<div class="layui-header header" th:replace="template :: top"></div>
+<!-- 菜单 -->
+<div class="layui-bg-blues" th:replace="template :: header(${navList})"></div>
+<!-- 轮播 -->
+<div class="carousel" th:replace="template :: carousel(${fileList})"></div>
+<!--文章正文-->
+<div class="content">
+    <div class="layui-container">
+        <div class="layui-row main">
+            <div class="layui-row">
+                <div class="layui-col-lg8 new_inforBox">
+                    <div class="layui-row dynamic dynamicd">
+                        <div class="layui-col-sm11">
+                            <h2>社团风采</h2>
+                        </div>
+                        <div class="layui-col-sm1 txt_right">
+                            <img src="img/more.png"/>
+                        </div>
+
+                    </div>
+                    <div class="newbox">
+                        <div class="layui-col-sm6 main_conL">
+                            <div class="layui-carousel" id="smalllb">
+                                <div carousel-item>
+                                    <div><img src="img/ban1.jpg"/></div>
+                                    <div><img src="img/ban2.jpg"/></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-sm6">
+                            <div class="main_conR main_conRa index_main">
+                                <ul>
+                                    <li>
+                                        <a href=""><span class="layui-col-xs8 layui-col-lg9 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
+                                                class="layui-col-xs4 layui-col-lg3 txt_right">2019-03-04</span></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
+                                                class="layui-col-xs4 txt_right">2018-12-13</span></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><span
+                                                class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
+                                                class="layui-col-xs4 txt_right">2018-06-02</span></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><span
+                                                class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
+                                                class="layui-col-xs4 txt_right">2019-03-04</span></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
+                                                class="layui-col-xs4 txt_right">2018-12-13</span></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><span
+                                                class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
+                                                class="layui-col-xs4 txt_right">2018-06-02</span></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><span
+                                                class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
+                                                class="layui-col-xs4 txt_right">2019-03-04</span></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
+                                                class="layui-col-xs4 txt_right">2018-12-13</span></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
+                                                class="layui-col-xs4 txt_right">2018-12-13</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="laypage" class="txt_center"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-lg4">
+                    <div class="layui-tab layui-tab-card">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">通知公共</li>
+                            <li>最新文章</li>
+                        </ul>
+                        <div class="layui-tab-content tab_content">
+                            <div class="layui-tab-item layui-show">
+                                <div class="tab_box">
+                                    <ul>
+                                        <li class="menu_title">
+                                            <a href="">关于2019年寒假期间实验室使用019年寒假期间实验室使啊实打实的</a>
+                                        </li>
+                                        <li class="menu_title">
+                                            <a href="">关于2018-2019学年第一学期实验室软件安...</a>
+                                        </li>
+                                        <li class="menu_title">
+                                            <a href="">关于2018年暑假期间实验室开放安排的通...</a>
+                                        </li>
+                                        <li class="menu_title">
+                                            <a href="">关于2017-2018学年第二学期实验室软件安...</a>
+                                        </li>
+                                        <li class="menu_title">
+                                            <a href="">关于2018年寒假期间实验室开放安排的通...</a>
+                                        </li>
+                                        <li class="menu_title">
+                                            <a href="">关于一体化课程期末上机考试安排的通知</a>
+                                        </li>
+                                        <li class="menu_title">
+                                            <a href="">关于2017-2018学年第二学期实验室软件安...</a>
+                                        </li>
+                                        <li class="menu_title">
+                                            <a href="">关于2018年寒假期间实验室开放安排的通...</a>
+                                        </li>
+                                        <li class="menu_title">
+                                            <a href="">关于一体化课程期末上机考试安排的通知</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="layui-tab-item">
+                                <div class="tab_box">
+                                    <ul>
+                                        <li class="menu_title">
+                                            <a href="">关于2019年寒假期间实验室使用019年寒假期间实验室使啊实打实的</a>
+                                        </li>
+                                        <li class="menu_title">
+                                            <a href="">关于2018-2019学年第一学期实验室软件安...</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md4 dynamic index_main list_border">
+                    <div class="layui-row dynamicb">
+                        <div class="layui-col-sm10">
+                            <h2>社联新闻</h2>
+                        </div>
+                        <div class="layui-col-sm2 txt_center">
+                            <img src="img/w_more.png"/>
+                        </div>
+                    </div>
+                    <div class="layui-row index_card main_conRa">
+                        <ul>
+                            <li>
+                                <a href=""><span
+                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
+                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
+                                        class="layui-col-xs4 txt_right">2018-12-13</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
+                                        class="layui-col-xs4 txt_right">2018-06-02</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span
+                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
+                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
+                                        class="layui-col-xs4 txt_right">2018-12-13</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
+                                        class="layui-col-xs4 txt_right">2018-06-02</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span
+                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
+                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="layui-col-md4 dynamic index_main">
+                    <div class="layui-row dynamicb">
+                        <div class="layui-col-sm10">
+                            <h2>风采活动</h2>
+                        </div>
+                        <div class="layui-col-sm2 txt_center">
+                            <img src="img/w_more.png"/>
+                        </div>
+                    </div>
+                    <div class="layui-row index_card main_conRa">
+                        <ul>
+                            <li>
+                                <a href=""><span
+                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
+                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
+                                        class="layui-col-xs4 txt_right">2018-12-13</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
+                                        class="layui-col-xs4 txt_right">2018-06-02</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span
+                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
+                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
+                                        class="layui-col-xs4 txt_right">2018-12-13</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
+                                        class="layui-col-xs4 txt_right">2018-06-02</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span
+                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
+                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="layui-col-md4 dynamic index_main">
+                    <div class="layui-row dynamicb">
+                        <div class="layui-col-sm10">
+                            <h2>留言板</h2>
+                        </div>
+                        <div class="layui-col-sm2 txt_center">
+                            <img src="img/w_more.png"/>
+                        </div>
+                    </div>
+                    <div class="layui-row index_card main_conRa">
+                        <ul>
+                            <li>
+                                <a href=""><span
+                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
+                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
+                                        class="layui-col-xs4 txt_right">2018-12-13</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
+                                        class="layui-col-xs4 txt_right">2018-06-02</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span
+                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
+                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
+                                        class="layui-col-xs4 txt_right">2018-12-13</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
+                                        class="layui-col-xs4 txt_right">2018-06-02</span></a>
+                            </li>
+                            <li>
+                                <a href=""><span
+                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
+                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 页脚 -->
+<div class="footWrap layui-col-sm12" th:replace="template :: footer"></div>
+<script src="layui/layui.js" th:src="@{/layui/layui.js}"></script>
+<script>
+    layui.use(['element', 'carousel'], function () {
+        var element = layui.element;
+        var carousel = layui.carousel;
+        var table = layui.table;
+        var laypage = layui.laypage;
+        carousel.render({
+            elem: '#biglb',
+            width: '100%' //设置容器宽度
+            ,
+            height: '335px',
+            arrow: 'hover' //始终显示箭头
+            //,anim: 'updown' //切换动画方式
+        });
+        carousel.render({
+            elem: '#smalllb',
+            width: '100%' //设置容器宽度
+            ,
+            height: '280px', //始终显示箭头
+            //,anim: 'updown' //切换动画方式
+        });
+    });
+</script>
+</body>
+
+</html>

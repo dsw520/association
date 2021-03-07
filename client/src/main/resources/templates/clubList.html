@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template :: head('list')">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>软件工程专业实验示范中心</title>
+	<link rel="stylesheet" href="layui/css/layui.css" th:href="@{/layui/css/layui.css}">
+	<link rel="stylesheet" href="css/mian.css" th:href="@{/css/mian.css}"/>
+</head>
+<body class="page">
+<!-- 头部  -->
+<div class="layui-header header" th:replace="template :: top"></div>
+<!-- 菜单 -->
+<div class="layui-bg-blues" th:replace="template :: header(${navList})"></div>
+<!-- 轮播 -->
+<div class="carousel" th:replace="template :: carousel(${fileList})"></div>
+<!--文章正文-->
+<div class="content">
+	<div class="layui-container">
+		<div class="layui-row">
+			<div class="layui-col-sm3 breadcrumb_border breadcrumb">
+				<img src="img/bri_icon1.png" />
+				<span class="layui-breadcrumb" lay-separator=">">
+							<a href="">首页</a>
+							<a href="">亚太地区</a>
+							<a><cite>啊实打实打算</cite></a>
+						</span>
+			</div>
+			<div class="layui-col-sm9 bread_right breadcrumb layui-hide-xs"></div>
+		</div>
+		<div class="layui-row main">
+			<div class="layui-col-sm3 main_conL" th:each="nav : ${navList}" th:if="${nav.id} eq ${navId}">
+				<div class="main_left_title main_left_bg layui-col-sm12 layui-row" th:text="${nav.name}">
+					解决方案
+				</div>
+				<ul class="main_left_title layui-row" id="main_left_title">
+					<th:block th:each="item : ${nav.itemsList}">
+						<a href=""  th:href="@{'/items/'+${item.navId}+'/'+${item.id}+'/'+${currentPage}}">
+							<li class="layui-row" th:classappend="${item.id} eq ${itId} ? 'active' : ''" th:text="${item.type}">
+								移动模块
+							</li>
+						</a>
+					</th:block>
+				</ul>
+			</div>
+			<!-- 社团卡片 -->
+			<div class="layui-col-sm9 layui-row">
+				<div class="main_cardR layui-row">
+					<ul>
+						<li>
+							<ul class="club_card layui-row layui-col-sm4" th:each="club : ${clubPageInfo.list}">
+								<li class="main_card_header">
+									<img src="img/cl_rx.jpg" th:src="@{${club.introPic}}"/>
+								</li>
+								<li class="main_card_title" th:text="${club.name}">
+									软件协会
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="laypage" class="txt_center"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 页脚 -->
+<div class="footWrap layui-col-sm12" th:replace="template :: footer"></div>
+<script src="layui/layui.js" th:src="@{/layui/layui.js}"></script>
+<script th:inline="javascript">
+	layui.use(['element', 'carousel', 'laypage'], function() {
+		var carousel = layui.carousel;
+		var laypage = layui.laypage;
+		var $ = layui.jquery;
+		carousel.render({
+			elem: '#biglb',
+			width: '100%' //设置容器宽度
+			,
+			height: '335px',
+			arrow: 'hover' //始终显示箭头
+			//,anim: 'updown' //切换动画方式
+		});
+		//完整功能
+		laypage.render({
+			elem: 'laypage',
+			count: [[${clubPageInfo.total}]],
+			limit: 6,
+			layout: ['prev', 'page', 'next', 'count'],
+			theme: '#1E9FFF',
+			jump: function(obj) {
+				//obj包含了当前分页的所有参数，比如：
+				console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+				console.log(obj.limit); //得到每页显示的条数
+				var url = [[${#request.contextPath}]] + "/club/" + [[${navId}]] + "/" + [[${itId}]] + "/" + obj.curr;
+				$.get(path+url, function (data) {
+					console.log(data);
+					var lis = [];
+					$.each(data,function (k,v) {
+						lis.push('<a href=""><li class="layui-row">移动模块</li></a>');
+					})
+					$("#main_left_title").html(lis.join(''));
+				});
+			}
+		});
+	});
+</script>
+</body>
+</html>

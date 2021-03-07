@@ -1,0 +1,19 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户登录</title>
+</head>
+<body>
+<h1>用户登录</h1>
+<a href="/user/logout">退出登录</a>
+<form action="/user/login" th:action="@{/user/login}" method="post">
+    用户名：<input type="text" name="username" id="username"><br>
+    密 码：<input type="text" name="password" id="password"><br>
+    验证码:<input type="text" name="code"><img th:src="@{/user/getCode}" src="../captcha/kaptcha.jpg" alt=""><br>
+    <input type="submit" value="登录">
+</form>
+</body>
+</html>

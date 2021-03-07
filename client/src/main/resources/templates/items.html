@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="template :: head('list')">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>软件工程专业实验示范中心</title>
+    <link rel="stylesheet" href="layui/css/layui.css" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" href="css/mian.css" th:href="@{/css/mian.css}"/>
+</head>
+
+<body class="page">
+<!-- 头部  -->
+<div class="layui-header header" th:replace="template :: top"></div>
+<!-- 菜单 -->
+<div class="layui-bg-blues" th:replace="template :: header(${navList})"></div>
+<!-- 轮播 -->
+<div class="carousel" th:replace="template :: carousel(${fileList})"></div>
+<!--文章正文-->
+<div class="content">
+    <div class="layui-container">
+        <!-- 面包屑 -->
+        <div class="layui-row" th:replace="template :: bread(${navList},${news})"></div>
+        <!-- 内容正文  -->
+        <div class="layui-row main">
+            <div class="layui-col-sm3 main_conL" th:each="nav : ${navList}" th:if="${nav.id} eq ${navId}">
+                <div class="main_left_title main_left_bg layui-col-sm12 layui-row" th:text="${nav.name}">
+                    解决方案
+                </div>
+                <ul class="main_left_title layui-row">
+                    <th:block th:if="${#lists.size(nav.itemsList) > 1}">
+                        <li class="layui-row" th:classappend="${item.id} eq ${itId} ? 'active' : ''"
+                            th:each="item : ${nav.itemsList}" th:text="${item.type}">移动模块
+                        </li>
+                    </th:block>
+                </ul>
+            </div>
+            <div class="layui-col-sm9">
+                <div class="main_conR main_conRa">
+                    <ul id="main_news">
+                        <li th:each="news : ${newsInfo.list}">
+                            <a href="" th:href="@{'/news/detail/'+${news.id}}">
+                                <span class="layui-col-xs8 layui-col-sm9 layui-col-md10 menu_title" th:text="${news.title}">
+                                    计算机学院（软件学院）实验室组织2019年度安全教育培训
+                                </span>
+                                <span class="layui-col-xs4 layui-col-sm3 layui-col-md2 txt_center" th:text="${#dates.format(news.publishTime, 'yyyy-MM-dd')}">
+                                    2019-03-04
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="laypage" class="txt_center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 页脚 -->
+<div class="footWrap layui-col-sm12" th:replace="template :: footer"></div>
+<script src="layui/layui.js" th:src="@{/layui/layui.js}"></script>
+<script>
+    layui.use(['element', 'carousel', 'laypage'], function () {
+        var carousel = layui.carousel;
+        var laypage = layui.laypage;
+        var $ = layui.jquery;
+        carousel.render({
+            elem: '#biglb',
+            width: '100%' //设置容器宽度
+            , height: '335px',
+            arrow: 'hover' //始终显示箭头
+            //,anim: 'updown' //切换动画方式
+        });
+        var path = "[[${#request.contextPath}]]";
+        //完整功能
+        laypage.render({
+            elem: 'laypage'
+            , count: [[${newsInfo.total}]]
+            , layout: ['prev', 'page', 'next', 'count']
+            , limit: 6
+            , theme: '#1e9fff'
+            , jump: function (obj,first) {
+                //首次不执行
+                if(!first){
+                    var url = path + "/news/list/" + [[${navId}]] + "/" + [[${itId}]] + "/" + obj.curr;
+                    $.get(url, function (data) {
+                        console.log(data);
+                        var inf = "";
+                        var go;
+                        var pushTime;
+                        $.each(data.list,function (i,v) {
+                            go = path+'/news/detail/'+v.id;
+                            pushTime = new Date(v.publishTime);
+                            pushTime = pushTime.getFullYear()+'-'+(pushTime.getMonth()+1)+'-'+pushTime.getDate();
+                            inf +='<li><a href="'+go+'"><span class="layui-col-xs8 layui-col-sm9 layui-col-md10 menu_title">'+v.title+'</span><span class="layui-col-xs4 layui-col-sm3 layui-col-md2 txt_center">'+pushTime+'</span></a></li>'
+                        });
+                        $("#main_news").html(inf);
+                    });
+                }
+            }
+        });
+    });
+</script>
+</body>
+
+</html>

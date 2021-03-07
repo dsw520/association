@@ -1,0 +1,326 @@
+/*列表页*/
+.header{
+	height: auto;
+	padding-top: 16px;
+	padding-bottom: 10px;
+}
+.search{
+	position:relative;
+	margin-top: 20px;
+}
+.search .icon{
+	z-index: 999;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	font-size: 26px;
+	cursor: pointer;
+	color: #b1b1b1;
+}
+.search .icon:hover{
+	color: black;
+}
+.search .btn_search{
+	border-radius: 14px;
+}
+.nav{
+	margin-top:16px;
+}
+.layui-bg-blues{
+	background-color: #0b6cb8;
+}
+.layui-nav .layui-nav-item a{
+	font-size: 16px;
+	
+}
+.logo img{
+	max-width: 100%;
+}
+/*轮播*/
+.carousel{
+	margin:12px auto 0;
+}
+.carousel img{
+	width: 100%;
+	height: 100%;
+}
+.breadcrumb{
+	height: 56px;
+	line-height: 56px;
+}
+.breadcrumb img{
+	padding-right: 10px;
+}
+.breadcrumb_border{
+	border-bottom: 2px solid #ffb64d;
+}
+.bread_right{
+	border-bottom: 2px solid #0b6cb8;
+}
+.main{
+	padding-top: 20px;
+}
+.main_conL{
+	min-height: 180px;
+}
+.main_left_title{
+    line-height: 53px;
+    text-align: center;
+    font-size: 20px;
+}
+.main_left_title li{
+	display: block;
+    height: 46px;
+    background: #f5f6fa;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666666;
+    text-align: center;
+    line-height: 46px;
+}
+.main_left_title li:hover{
+	cursor: pointer;
+	color: #fff;
+	background-color: #0b6cb8;
+}
+.main_left_title .active{
+	cursor: pointer;
+	color: #fff;
+	background-color: #0b6cb8;
+}
+.main_left_bg{
+	font-size: 24px;
+	color: #fff;
+	background-image: url(../img/bri_lbg.png);
+}
+.main_left_title li{
+	margin: 10px 0;
+}
+.main_conR{
+    margin-left: 20px;
+    height: auto;
+    min-height: 400px;
+    border-left: 1px solid #eee;
+}
+.main_conRa{
+    border-left: none;
+}
+.main_conR ul li {
+    font-size: 15px;
+    height: 46px;
+    line-height: 46px;
+    border-bottom: 1px dashed #eee;
+    background: url(../img/xdd.png) no-repeat 2px 22px;
+    text-indent: 15px;
+    cursor: pointer;
+}
+.main_conR ul li span {
+    margin-right: 0;
+    color: #666;
+}
+.menu_title{
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.main_conRa li:hover{
+	background:#fcfcfc url(../img/xdd_h.png) no-repeat 2px 22px;
+}
+.main_conRa li:hover span{
+	color: #0b6cb8;
+}
+.txt_center{
+	text-align: center;
+}
+.txt_right{
+	text-align: right;
+}
+/*主页*/
+.index_main{
+	min-height: 294px;
+}
+.index_main ul li{
+	font-style: normal;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #5c5c5c;
+    width: 100%;
+    background: url(../img/xdd.png) no-repeat 0px 10px;
+    text-indent: 12px;
+}
+.index_main ul li:hover{
+	background: url(../img/xdd_h.png) no-repeat 0px 10px;
+}
+#smalllb img{
+	width: 100%;
+	height: 100%;
+}
+.dynamic{
+	height: 35px;
+    line-height: 34px;
+}
+
+.dynamicd h2{
+	font-size: 16px;
+    color: #464646;
+    font-weight: normal;
+    float: left;
+    padding: 0 5px;
+    border-bottom: 2px solid #0b6cb8;
+}
+.newbox{
+	margin: 12px auto 0;
+    height: auto;
+    overflow: hidden;
+}
+.new_inforBox{
+    height: auto;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+.dynamicb{
+	background: #0b6cb8;
+    border-bottom: none;
+    height: 44px;
+    line-height: 44px;
+}
+.layui-tab-card>.layui-tab-title .layui-this{
+	border-top: 2px solid #0b6cb8;
+    color: #0b6cb8;
+}
+.layui-tab-card{
+	box-shadow:none;
+}
+.dynamic h2 {
+    font-size: 16px;
+    color: #464646;
+    font-weight: normal;
+    float: left;
+    padding: 0 5px;
+    border-bottom: 2px solid #0b6cb8;
+}
+.dynamicb h2 {
+    color: #fff;
+    border-bottom: none;
+    text-indent: 10px;
+}
+.dynamic img{
+	cursor: pointer;
+}
+.index_main .index_card{
+	border: 1px solid #eee;
+	margin: 10px 2px;
+	padding: 10px;
+}
+.tab_box ul li{
+	background: url(../img/h_jt.png) no-repeat 2px 10px;
+    text-indent: 20px;
+    line-height: 32px;
+}
+.tab_content{
+	height: 274px;
+}
+.footWrap {
+    margin: 30px auto 0;
+    position: relative;
+    z-index: 99991;
+}
+.footDiv_one {
+    margin: 0px auto 0;
+    height: 60px;
+    line-height: 60px;
+    color: #FFFFFF;
+    font-size: 13px;
+    overflow: hidden;
+    background: #0a5894;
+    text-align: center;
+}
+.footDiv_one a {
+    color: #FFFFFF;
+}
+.footDiv_one a:hover{
+	color: #0b6cb8;
+}
+.show_content{
+    margin: 0 auto;
+    height: auto;
+    min-height: 300px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+.main_contit {
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    overflow: hidden;
+    border-bottom: 1px dashed #ddd;
+}
+.main_contit h2 {
+    text-align: center;
+    line-height: 28px;
+    font-size: 24px;
+    color: #0b6cb8;
+    font-weight: bold;
+    margin-top: 30px;
+}
+.main_contit p {
+    text-align: center;
+    font-size: 14px;
+    color: #999999;
+    margin: 25px 0 10px 0;
+} 
+.main_conDiv{
+	width: 90%;
+	margin: 25px auto 0;
+}
+.main_conDiv img{
+    max-width:100%;
+    height:auto;
+    display:block;
+	margin:5px auto;
+        
+}
+.main_conDiv p {
+    text-indent: 2em;
+    font-size: 15px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+.main_art{
+	width: 100%;
+	margin: 50px auto 0;
+    background: #fbfbfb;
+    height: auto;
+    overflow: hidden;
+}
+.main_art ul li {
+    font-size: 15px;
+    line-height: 35px;
+    margin-left: 15px;
+}
+.main_art ul li a:hover{
+	color: #0b6cb8;
+}
+
+/*  社团栏目表 */
+.main_cardR{
+	padding: 0 25px;
+    min-height: 420px;
+}
+.main_card_header img{
+	width: 100%;
+	height: 100%;
+}
+.club_card{
+	margin-bottom: 30px;
+}
+.main_cardR .main_card_title{
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 0.125rem;
+    font-family: "Microsoft YaHei";
+}

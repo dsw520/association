@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title th:text="${title}">软件工程专业实验示范中心</title>
+    <link rel="stylesheet" href="layui/css/layui.css" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" href="css/mian.css" th:href="@{/css/mian.css}"/>
+</head>
+<body>
+<!-- 头部  -->
+<div class="layui-header header" th:fragment="top">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-sm8 logo">
+                <img src="img/logo.png" th:src="@{/img/logo.png}"/>
+            </div>
+            <div class="layui-col-sm3 layui-col-sm-offset1 search">
+                <input class="layui-input btn_search" placeholder="请输入搜索内容" />
+                <i class="layui-icon icon">&#xe615;</i>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 菜单 -->
+<div class="layui-bg-blues" th:fragment="header(navList)">
+    <div class="layui-container">
+        <ul class="layui-nav layui-bg-blues">
+            <li class="layui-nav-item">
+                <a href="javascript:;" th:href="@{/}">首页</a>
+            </li>
+            <li class="layui-nav-item" th:each="nav : ${navList}">
+                <a href="javascript:;" th:href="@{'/items/'+${nav.id}+'/0/1'}" th:text="${nav.name }">解决方案</a>
+                <dl class="layui-nav-child" th:if="${#lists.size(nav.itemsList) > 1}">
+                    <!-- 二级菜单 -->
+                    <dd th:each="item : ${nav.itemsList}">
+                        <a href="" th:href="@{'/items/'+${item.navId}+'/'+${item.id}+'/1'}" th:text="${item.type}">移动模块</a>
+                    </dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;" th:href="@{/}">用户登录</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 轮播 -->
+<div class="carousel" th:fragment="carousel(fileList)">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-carousel" id="biglb">
+                <div carousel-item>
+                    <div th:each="file : ${fileList}"><a href="" th:href="@{'/news/detail/'+${file.newsId}}"><img src="img/ban1.jpg" th:src="@{'/'+${file.filePath}}"/></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 面包屑 -->
+<div class="layui-row" th:fragment="bread(navList,news)">
+    <div class="layui-col-sm3 breadcrumb_border breadcrumb layui-elip">
+        <img th:src="@{/img/bri_icon1.png}"/>
+        <span class="layui-breadcrumb" lay-separator=">">
+              <a href="" th:href="@{/}">首页</a>
+              <th:block th:each="nav : ${navList}" th:if="${nav.id} eq ${navId}">
+                  <a th:href="@{'/items/'+${nav.id}+'/0/1'}"><cite th:text="${nav.name}">亚太地区</cite></a>
+              </th:block>
+              <th:block th:each="nav : ${navList}" th:if="${news} != null and ${nav.id} == ${news.navId}">
+                  <a th:href="@{'/items/'+${nav.id}+'/0/1'}"><cite th:text="${nav.name}">亚太地区</cite></a>
+              </th:block>
+              <th:block th:if="${news} != null">
+                  <a th:href="@{'/news/detail/'+${news.id}}" th:text="${news.title}">啊实打实打算</a>
+              </th:block>
+        </span>
+    </div>
+    <div class="layui-col-sm9 bread_right breadcrumb layui-hide-xs"></div>
+</div>
+<!-- 页脚 -->
+<div class="footWrap layui-col-sm12" th:fragment="footer">
+    <div class="footDiv_one">
+        <div class="foot_one">
+            <p>广东科技学院学生社团中心©版权所有 &nbsp;地址：东莞市广东科技学院 &nbsp;联系电话：0000-0000000
+                <a href="" target="_blank">管理网站</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template :: head('list')">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>软件工程专业实验示范中心</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/mian.css"/>
+</head>
+
+<body class="page">
+<!-- 头部  -->
+<div class="layui-header header" th:replace="template :: top"></div>
+<!-- 菜单 -->
+<div class="layui-bg-blues" th:replace="template :: header(${navList})"></div>
+<!-- 轮播 -->
+<div class="carousel" th:replace="template :: carousel(${fileList})"></div>
+<!--文章正文-->
+<div class="content">
+    <div class="layui-container">
+        <!-- 面包屑 -->
+        <div class="layui-row" th:replace="template :: bread(${navList},${news})"></div>
+        <!-- 内容正文  -->
+        <div class="layui-row show_content">
+            <div class="layui-row">
+                <div class="main_contit">
+                    <h2 th:text="${news.title}">关于加强实验教学期间实验室管理工作的补充规定</h2>
+                    <p>来源：<th:block th:text="${news.source}">实验中心</th:block> 时间：<th:block th:text="${#dates.format(news.publishTime, 'yyyy-MM-dd HH:mm:ss')}">2017-10-25</th:block> 　点击数：<span id="dynclicks_wbnews_2440_292" name="dynclicks_wbnews_2440_292" th:text="${news.clickNum}">30</span>
+                    </p>
+                </div>
+                <div class="main_conDiv">
+                    <div class="v_news_content" th:utext="${news.content}">
+                        <p style="text-indent: 37px;"><span style="font-size: 19px;"><span
+                                style="font-family: Calibri;">2019</span></span><span
+                                style="font-family: 宋体; font-size: 19px;">年</span><span style="font-size: 19px;"><span
+                                style="font-family: Calibri;">2</span></span><span
+                                style="font-family: 宋体; font-size: 19px;">月</span><span style="font-size: 19px;"><span
+                                style="font-family: Calibri;">28</span></span><span
+                                style="font-family: 宋体; font-size: 19px;">日下午，计算机学院（软件学院）实验室邀请平顶山市消防支队培训中心教员孙鲁平，在科技楼</span><span
+                                style="font-size: 19px;"><span style="font-family: Calibri;">403</span></span><span
+                                style="font-family: 宋体; font-size: 19px;">室开展了一场有关实验室消防安全讲座。孙老师首先向大家讲解了用电、防火等安全理论知识，接着用触目惊心的案例提升学生的消防安全意识，邢立国老师主持讲座。</span><span
+                                style="font-family: Calibri;"><span style="font-size: 19px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
+                        </p>
+                        <p style="text-align: center;"><img
+                                src="/__local/1/CA/0F/BC04E2C8732FDCE16F03159C6F4_EE3D5639_15374.jpg" width="500"
+                                vsbhref="vurl" vurl="/_vsl/1CA0FBC04E2C8732FDCE16F03159C6F4/EE3D5639/15374" vheight=""
+                                vwidth="500" orisrc="/__local/C/7A/B1/A291D0FE89A951736D93545AFB0_5B7C869C_8A0034.jpg"
+                                class="img_vsb_content"></p>
+                        <p style="text-align: center;"><span style="font-family: Calibri;"><span
+                                style="font-size: 19px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                style="font-family: Calibri; font-size: 16px;">&nbsp;&nbsp;&nbsp;培训现场&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>
+                        </p>
+                        <p style="text-indent: 37px;"><span style="font-family: 宋体; font-size: 19px;">做好实验室安全教育可以有效提升安全管理质量，提高实验室管理人员的安全防范意识，更好地维护公共财产安全和保护个人人身安全。通过本次消防安全教育，使实验室管理教师和相关学生充分掌握了计算机实验室的安全注意事项，学习了消防安全知识，整场讲座气氛热烈，邢立国老师主持。</span>
+                        </p>
+                        <p style="text-indent: 37px;"><span style="font-family: 宋体; font-size: 19px;">参加本次培训的人员包括计算机学院（软件学院）实验室全体管理人员、实验室协管学生、计算机学院（软件学院）各班班长、双创中心团队成员代表和</span><span
+                                style="font-size: 19px;"><span style="font-family: Calibri;">ACM</span></span><span
+                                style="font-family: 宋体; font-size: 19px;">算法公关团队成员。</span></p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="main_art">
+                    <ul>
+                        <li>
+                            <lable>上一篇：</lable>
+                            <a href="">软件工程实验中心组织“实验室文化建设方案”讨论</a></li>
+                        <li>
+                            <lable>下一篇：</lable>
+                            <a href="">计算机学院（软件学院）实验室开展安全隐患排查及整改工作</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- 页脚 -->
+<div class="footWrap layui-col-sm12" th:replace="template :: footer"></div>
+<script src="layui/layui.js" th:src="@{/layui/layui.js}"></script>
+<script>
+    layui.use(['element', 'carousel', 'laypage'], function () {
+        var carousel = layui.carousel;
+        carousel.render({
+            elem: '#biglb',
+            width: '100%' //设置容器宽度
+            , height: '335px',
+            arrow: 'hover' //始终显示箭头
+            //,anim: 'updown' //切换动画方式
+        });
+    });
+</script>
+</body>
+
+</html>
