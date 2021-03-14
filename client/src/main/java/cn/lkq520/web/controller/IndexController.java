@@ -1,7 +1,6 @@
 package cn.lkq520.web.controller;
 
 import cn.lkq520.pojo.File;
-import cn.lkq520.pojo.Nav;
 import cn.lkq520.web.service.FileService;
 import cn.lkq520.web.service.NavService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +25,7 @@ public class IndexController {
 
     @RequestMapping({"index","/"})
     public String index(Model model){
-        List<Nav> navList = navService.getNavWithItem();
         List<File> fileList = fileService.getListByFileTypeId(4);
-        model.addAttribute("navList",navList);
         model.addAttribute("fileList",fileList);
         return "index";
     }

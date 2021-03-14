@@ -42,7 +42,7 @@ public class UserController {
     @RequestMapping("loginView")
     public String loginView(){
         System.out.println("跳转至login的html页面");
-        return "login";
+        return "login-1";
     }
 
     /**
@@ -86,12 +86,13 @@ public class UserController {
      * @return
      */
     @RequestMapping("/login")
-    public String login(String username, String password, String code, HttpServletRequest request) {
+    public String login(String username, String password, String code, boolean rememberMe,HttpServletRequest request) {
         //比较验证码
         String codes = request.getParameter(SHIRO_VERIFY_SESSION);
         System.out.println(codes);
         //获取主体对象
         Subject subject = SecurityUtils.getSubject();
+        System.out.println(rememberMe);
         subject.isRemembered();
         try {
             if(codes.equalsIgnoreCase(code)){
@@ -127,5 +128,10 @@ public class UserController {
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
         return "redirect:/login.html";
+    }
+
+    @RequestMapping("registerView")
+    public String registerView(){
+        return "register";
     }
 }

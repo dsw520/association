@@ -2,7 +2,6 @@ package cn.lkq520.web.controller;
 
 
 import cn.lkq520.pojo.File;
-import cn.lkq520.pojo.Nav;
 import cn.lkq520.pojo.News;
 import cn.lkq520.web.service.FileService;
 import cn.lkq520.web.service.NavService;
@@ -37,10 +36,8 @@ public class NewsController {
 
     @RequestMapping("/detail/{newId}")
     public String detail(Model model,@PathVariable("newId") Integer newId){
-        List<Nav> navList = navService.getNavWithItem();
         List<File> fileList = fileService.getListByFileTypeId(4);
         News news = newsService.getById(newId);
-        model.addAttribute("navList",navList);
         model.addAttribute("fileList",fileList);
         model.addAttribute("news",news);
         return "detail";
