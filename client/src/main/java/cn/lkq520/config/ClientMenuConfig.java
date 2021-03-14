@@ -19,6 +19,6 @@ public class ClientMenuConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         InterceptorRegistration registration = registry.addInterceptor(new MenuInterceptor());
-        registration.addPathPatterns("/*").addPathPatterns("/user/registerView");
+        registration.addPathPatterns("/*").addPathPatterns("/user/registerView").addPathPatterns("/news/**");
     }
 }
