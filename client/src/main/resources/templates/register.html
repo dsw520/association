@@ -52,11 +52,11 @@
                             <div class="layui-input-inline">
                                 <select name="interest" lay-verify="required">
                                     <option value="">请选择</option>
-                                    <option value="0">写作</option>
-                                    <option value="1">阅读</option>
-                                    <option value="2">游戏</option>
-                                    <option value="3">音乐</option>
-                                    <option value="4">旅行</option>
+                                    <option value="0">计算机学院</option>
+                                    <option value="1">管理学院</option>
+                                    <option value="2">经济学院</option>
+                                    <option value="3">社会学院</option>
+                                    <option value="4">文学院</option>
                                 </select>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                             </div>
                         </div>
                         <div class="layui-form-item">
-                            <button class="layui-btn" lay-submit="" lay-filter="demo2">跳转式提交</button>
+                            <button class="layui-btn" lay-submit="" lay-filter="demo2">注册申请</button>
                         </div>
                     </form>
                 </div>
@@ -101,8 +101,9 @@
         </div>
     </div>
 </div>
-
-<script src="../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<!-- 页脚 -->
+<div class="footWrap layui-col-sm12" th:replace="template :: footer"></div>
+<script src="../lib/layui-v2.5.5/layui.js" th:src="@{/layui/layui.js}" charset="utf-8"  ></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 <script>
     layui.use(['form', 'layedit', 'laydate'], function () {
