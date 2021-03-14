@@ -1,0 +1,14 @@
+.login-form .layui-form-item .input{
+    padding-left: 36px;
+}
+.registerTip{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+.registerTip a{
+    color: #bbbbbb;
+}
+.registerTip a:hover{
+    color: red;
+}
