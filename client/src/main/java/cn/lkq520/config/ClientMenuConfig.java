@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * TODO
+ * 返回客户端的菜单数据
  *
  * @author Luo
  * @version 1.0
@@ -19,6 +19,9 @@ public class ClientMenuConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         InterceptorRegistration registration = registry.addInterceptor(new MenuInterceptor());
-        registration.addPathPatterns("/*").addPathPatterns("/user/registerView").addPathPatterns("/news/**");
+        registration.addPathPatterns("/*")
+                .addPathPatterns("/user/registerView")
+                .addPathPatterns("/news/**")
+                .addPathPatterns("/items/**");
     }
 }
