@@ -29,9 +29,14 @@ public class Club implements Serializable {
     private static final long serialVersionUID=1L;
 
     /**
+     * 社团主键
+     */
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
+
+    /**
      * 社团编号
      */
-    @TableId(value = "num", type = IdType.AUTO)
     private Integer num;
 
     /**
