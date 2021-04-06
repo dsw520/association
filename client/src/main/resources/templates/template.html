@@ -30,7 +30,7 @@
                 <a href="javascript:;" th:href="@{/}">首页</a>
             </li>
             <li class="layui-nav-item" th:each="nav : ${navList}">
-                <a href="javascript:;" th:href="@{'/items/'+${nav.id}+'/0/1'}" th:text="${nav.name }">解决方案</a>
+                <a href="javascript:;" th:href="${#lists.size(nav.itemsList) > 1} ? @{'javascript:;'} : @{'/items/'+${nav.id}+'/0/1'}" th:text="${nav.name }">解决方案</a>
                 <dl class="layui-nav-child" th:if="${#lists.size(nav.itemsList) > 1}">
                     <!-- 二级菜单 -->
                     <dd th:each="item : ${nav.itemsList}">

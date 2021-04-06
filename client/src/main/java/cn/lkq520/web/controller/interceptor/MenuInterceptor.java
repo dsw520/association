@@ -23,6 +23,8 @@ public class MenuInterceptor implements HandlerInterceptor {
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView mav) throws Exception {
         NavService navService = (NavService) ApplicationContextUtils.getBean("navServiceImpl");
         List<Nav> navList = navService.getNavWithItem();
-        mav.addObject("navList",navList);
+        if (mav != null){
+            mav.addObject("navList",navList);
+        }
     }
 }

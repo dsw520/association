@@ -6,7 +6,6 @@ import cn.lkq520.pojo.File;
 import cn.lkq520.pojo.News;
 import cn.lkq520.web.service.ClubService;
 import cn.lkq520.web.service.FileService;
-import cn.lkq520.web.service.NavService;
 import cn.lkq520.web.service.NewsService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,6 @@ import java.util.List;
 @RequestMapping("items")
 public class ItemsController {
 
-    @Autowired private NavService navService;
     @Autowired private ClubService clubService;
     @Autowired private NewsService newsService;
     @Autowired private FileService fileService;
@@ -49,7 +47,6 @@ public class ItemsController {
             model.addAttribute("newsInfo",newsInfo);
             return "items";
         }
-
     }
 }
 
