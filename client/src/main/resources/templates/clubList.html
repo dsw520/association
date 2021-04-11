@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="template :: head('list')">
+<head th:replace="template :: head('部门列表')">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>软件工程专业实验示范中心</title>
@@ -102,7 +102,7 @@
 					console.log(data);
 					var lis = [];
 					$.each(data.list,function (k,v) {
-						lis.push('<ul class="club_card layui-row layui-col-sm4"> <a href=""> <li class="main_card_header"> <img src="'+path+v.introPic+'"/> </li> <li class="main_card_title"> '+v.name+' </li> </a> </ul>');
+						lis.push('<ul class="club_card layui-row layui-col-sm4"> <a href="'+path+'/club/toClubDetail/'+v.id+'"> <li class="main_card_header"> <img src="'+path+v.introPic+'"/> </li> <li class="main_card_title"> '+v.name+' </li> </a> </ul>');
 					})
 					$("#clubItem").html(lis.join(''));
 				});

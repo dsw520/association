@@ -15,4 +15,5 @@ import com.github.pagehelper.PageInfo;
 public interface ClubService extends IService<Club> {
 
     PageInfo<Club> getByItemId(Integer current, Integer size, Integer itId);
+
 }

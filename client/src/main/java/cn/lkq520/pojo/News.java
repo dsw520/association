@@ -87,5 +87,4 @@ public class News implements Serializable {
      */
     @TableLogic(value = "1", delval = "0")
     private Integer status;
-
 }

@@ -1,5 +1,6 @@
 package cn.lkq520.web.service.impl;
 
+import cn.lkq520.pojo.Club;
 import cn.lkq520.pojo.News;
 import cn.lkq520.web.mapper.NewsMapper;
 import cn.lkq520.web.service.NewsService;
@@ -39,4 +40,5 @@ public class NewsServiceImpl extends ServiceImpl<NewsMapper, News> implements Ne
         List<News> newsList = newsMapper.selectList(queryWrapper);
         return new PageInfo<>(newsList);
     }
+
 }

@@ -16,4 +16,13 @@ import java.util.List;
 public interface FileService extends IService<File> {
 
     List<File> getListByFileTypeId(int FileTypeId);
+
+    /**
+     * 根据部门ID获取轮播图片
+     *
+     * @param clubId
+     * @param limit
+     * @return java.util.List<cn.lkq520.pojo.Club>
+     */
+    List<File> getListFilesByClubId(int clubId, int limit);
 }

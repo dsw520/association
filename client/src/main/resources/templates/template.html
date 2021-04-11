@@ -16,7 +16,7 @@
                 <img src="img/logo.png" th:src="@{/img/logo.png}"/>
             </div>
             <div class="layui-col-sm3 layui-col-sm-offset1 search">
-                <input class="layui-input btn_search" placeholder="请输入搜索内容" />
+                <input class="layui-input btn_search" placeholder="请输入搜索内容"/>
                 <i class="layui-icon icon">&#xe615;</i>
             </div>
         </div>
@@ -30,11 +30,14 @@
                 <a href="javascript:;" th:href="@{/}">首页</a>
             </li>
             <li class="layui-nav-item" th:each="nav : ${navList}">
-                <a href="javascript:;" th:href="${#lists.size(nav.itemsList) > 1} ? @{'javascript:;'} : @{'/items/'+${nav.id}+'/0/1'}" th:text="${nav.name }">解决方案</a>
+                <a href="javascript:;"
+                   th:href="${#lists.size(nav.itemsList) > 1} ? @{'javascript:;'} : @{'/items/'+${nav.id}+'/0/1'}"
+                   th:text="${nav.name }">解决方案</a>
                 <dl class="layui-nav-child" th:if="${#lists.size(nav.itemsList) > 1}">
                     <!-- 二级菜单 -->
                     <dd th:each="item : ${nav.itemsList}">
-                        <a href="" th:href="@{'/items/'+${item.navId}+'/'+${item.id}+'/1'}" th:text="${item.type}">移动模块</a>
+                        <a href="" th:href="@{'/items/'+${item.navId}+'/'+${item.id}+'/1'}"
+                           th:text="${item.type}">移动模块</a>
                     </dd>
                 </dl>
             </li>
@@ -50,7 +53,8 @@
         <div class="layui-row">
             <div class="layui-carousel" id="biglb">
                 <div carousel-item>
-                    <div th:each="file : ${fileList}"><a href="" th:href="@{'/news/detail/'+${file.newsId}}"><img src="img/ban1.jpg" th:src="@{'/'+${file.filePath}}"/></a></div>
+                    <div th:each="file : ${fileList}"><a href="" th:href="@{'/news/detail/'+${file.newsId}}"><img
+                            src="img/ban1.jpg" th:src="@{'/'+${file.filePath}}"/></a></div>
                 </div>
             </div>
         </div>

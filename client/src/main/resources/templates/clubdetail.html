@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template :: head('list')">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>软件工程专业实验示范中心</title>
-    <link rel="stylesheet" href="layui/css/layui.css" th:href="@{layui/css/layui.css}">
-    <link rel="stylesheet" href="css/mian.css" th:href="@{css/mian.css}"/>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/mian.css"/>
 </head>
 
 <body class="page">
@@ -21,80 +21,37 @@
         <div class="layui-row main">
             <div class="layui-row">
                 <div class="layui-col-lg8 new_inforBox">
-                    <div class="layui-row dynamic dynamicd">
-                        <div class="layui-col-sm11">
-                            <h2>社团风采</h2>
-                        </div>
-                        <div class="layui-col-sm1 txt_right">
-                            <img th:src="@{/img/more.png}" src="img/more.png"/>
-                        </div>
-
-                    </div>
                     <div class="newbox">
-                        <div class="layui-col-sm6 main_conL">
-                            <div class="layui-carousel" id="smalllb">
-                                <div carousel-item>
-                                    <div><img src="img/ban1.jpg"/></div>
-                                    <div><img src="img/ban2.jpg"/></div>
+                        <div class="layui-row layui-col-space10">
+                            <div class="layui-col-sm4 introduceP">
+                                <img th:src="@{${club.introPic}}" src="img/cl_robot.jpg" class="club_img"/>
+                                <div class="club_name dynamicb">软件协会</div>
+                            </div>
+                            <div class="layui-col-sm8">
+                                <div class="layui-row layui-col-space15">
+                                    <div class="layui-col-md12">
+                                        <div class="layui-card introduceH">
+                                            <div class="layui-card-header">社团简介</div>
+                                            <div class="layui-card-body" th:text="${club.introduce}">
+                                                中国软件行业协会(英文全称：China Software Industry Association，英文缩写：CSIA)
+                                                成立于1984年9月6日，由从事软件研究开发、出版、销售、培训，从事信息化系统研究开发，开展信息服务，以及为
+                                                软件产业提供咨询、市场调研、投融资服务和其他中介服务等的企事业单位与个人自愿结合组成,
+                                                经国家民政部注册登记，是唯一代表中国软件产业界并具有全国性一级社团法人资格的行业组织。
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="layui-col-sm6">
-                            <div class="main_conR main_conRa index_main">
-                                <ul>
-                                    <li>
-                                        <a href=""><span class="layui-col-xs8 layui-col-lg9 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
-                                                class="layui-col-xs4 layui-col-lg3 txt_right">2019-03-04</span></a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
-                                                class="layui-col-xs4 txt_right">2018-12-13</span></a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span
-                                                class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
-                                                class="layui-col-xs4 txt_right">2018-06-02</span></a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span
-                                                class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
-                                                class="layui-col-xs4 txt_right">2019-03-04</span></a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
-                                                class="layui-col-xs4 txt_right">2018-12-13</span></a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span
-                                                class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
-                                                class="layui-col-xs4 txt_right">2018-06-02</span></a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span
-                                                class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
-                                                class="layui-col-xs4 txt_right">2019-03-04</span></a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
-                                                class="layui-col-xs4 txt_right">2018-12-13</span></a>
-                                    </li>
-                                    <li>
-                                        <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
-                                                class="layui-col-xs4 txt_right">2018-12-13</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div id="laypage" class="txt_center"></div>
-                        </div>
                     </div>
                 </div>
-                <div class="layui-col-lg4">
-                    <div class="layui-tab layui-tab-card">
+                <div class="layui-col-lg4 club_tab">
+                    <div class="layui-tab layui-tab-card" style="margin: 0;">
                         <ul class="layui-tab-title">
-                            <li class="layui-this">通知公共</li>
+                            <li class="layui-this">社团通知</li>
                             <li>最新文章</li>
                         </ul>
-                        <div class="layui-tab-content tab_content">
+                        <div class="layui-tab-content">
                             <div class="layui-tab-item layui-show">
                                 <div class="tab_box">
                                     <ul>
@@ -122,9 +79,6 @@
                                         <li class="menu_title">
                                             <a href="">关于2018年寒假期间实验室开放安排的通...</a>
                                         </li>
-                                        <li class="menu_title">
-                                            <a href="">关于一体化课程期末上机考试安排的通知</a>
-                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -148,7 +102,7 @@
                 <div class="layui-col-md4 dynamic index_main list_border">
                     <div class="layui-row dynamicb">
                         <div class="layui-col-sm10">
-                            <h2>社联新闻</h2>
+                            <h2>社团活动</h2>
                         </div>
                         <div class="layui-col-sm2 txt_center">
                             <img th:src="@{/img/w_more.png}" src="img/w_more.png"/>
@@ -193,7 +147,7 @@
                 <div class="layui-col-md4 dynamic index_main">
                     <div class="layui-row dynamicb">
                         <div class="layui-col-sm10">
-                            <h2>风采活动</h2>
+                            <h2>社团风采</h2>
                         </div>
                         <div class="layui-col-sm2 txt_center">
                             <img th:src="@{/img/w_more.png}" src="img/w_more.png"/>
@@ -238,7 +192,7 @@
                 <div class="layui-col-md4 dynamic index_main">
                     <div class="layui-row dynamicb">
                         <div class="layui-col-sm10">
-                            <h2>留言板</h2>
+                            <h2>社团人员</h2>
                         </div>
                         <div class="layui-col-sm2 txt_center">
                             <img th:src="@{/img/w_more.png}" src="img/w_more.png"/>
@@ -284,7 +238,7 @@
         </div>
     </div>
 </div>
-<!-- 页脚 -->
+ <!-- 页脚 -->
 <div class="footWrap layui-col-sm12" th:replace="template :: footer"></div>
 <script src="layui/layui.js" th:src="@{/layui/layui.js}"></script>
 <script>
@@ -293,19 +247,19 @@
         var carousel = layui.carousel;
         var table = layui.table;
         var laypage = layui.laypage;
+        var $ = layui.jquery;
+        $(function () {
+            console.log($(".introduceP").height())
+
+            $(".introduceH").css("height", $(".introduceP").height());
+            $(".club_tab").css("height", $(".new_inforBox").height());
+        })
         carousel.render({
             elem: '#biglb',
             width: '100%' //设置容器宽度
             ,
             height: '335px',
             arrow: 'hover' //始终显示箭头
-            //,anim: 'updown' //切换动画方式
-        });
-        carousel.render({
-            elem: '#smalllb',
-            width: '100%' //设置容器宽度
-            ,
-            height: '280px', //始终显示箭头
             //,anim: 'updown' //切换动画方式
         });
     });

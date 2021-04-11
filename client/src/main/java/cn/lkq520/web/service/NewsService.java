@@ -16,4 +16,5 @@ public interface NewsService extends IService<News> {
 
 
     PageInfo<News> getPageByNavIdOrItemId(Integer navId, Integer itId, Integer pageNum, int size, int status);
+
 }

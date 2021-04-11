@@ -22,6 +22,7 @@ public class ClientMenuConfig implements WebMvcConfigurer {
         registration.addPathPatterns("/*")
                 .addPathPatterns("/user/registerView")
                 .addPathPatterns("/news/**")
-                .addPathPatterns("/items/**");
+                .addPathPatterns("/items/**")
+                .addPathPatterns("/club/**");
     }
 }

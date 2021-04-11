@@ -30,11 +30,6 @@ public class File implements Serializable {
     private Integer id;
 
     /**
-     * 文件名称
-     */
-    private String fileName;
-
-    /**
      * 文件路径
      */
     private String filePath;

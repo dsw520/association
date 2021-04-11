@@ -1,5 +1,6 @@
 package cn.lkq520.web.service.impl;
 
+import cn.lkq520.pojo.Club;
 import cn.lkq520.pojo.File;
 import cn.lkq520.web.mapper.FileMapper;
 import cn.lkq520.web.service.FileService;
@@ -30,5 +31,10 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements Fi
         ew.orderByDesc("create_time");
         ew.last("limit 6");
         return fileMapper.selectList(ew);
+    }
+
+    @Override
+    public List<File> getListFilesByClubId(int clubId, int limit) {
+        return fileMapper.getListFilesByClubId(clubId,limit);
     }
 }

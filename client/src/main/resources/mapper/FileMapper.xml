@@ -2,4 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.lkq520.web.mapper.FileMapper">
 
+    <select id="getListFilesByClubId" resultType="cn.lkq520.pojo.File">
+        SELECT f.*
+            FROM t_news n LEFT JOIN t_file f ON n.id = f.news_id
+            WHERE file_type_id = 4 AND club_id = #{clubId} AND n.status = 1 limit #{limit}
+    </select>
 </mapper>

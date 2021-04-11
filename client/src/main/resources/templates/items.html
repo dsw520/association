@@ -40,10 +40,12 @@
                     <ul id="main_news">
                         <li th:each="news : ${newsInfo.list}">
                             <a href="" th:href="@{'/news/detail/'+${news.id}}">
-                                <span class="layui-col-xs8 layui-col-sm9 layui-col-md10 menu_title" th:text="${news.title}">
+                                <span class="layui-col-xs8 layui-col-sm9 layui-col-md10 menu_title"
+                                      th:text="${news.title}">
                                     计算机学院（软件学院）实验室组织2019年度安全教育培训
                                 </span>
-                                <span class="layui-col-xs4 layui-col-sm3 layui-col-md2 txt_center" th:text="${#dates.format(news.publishTime, 'yyyy-MM-dd')}">
+                                <span class="layui-col-xs4 layui-col-sm3 layui-col-md2 txt_center"
+                                      th:text="${#dates.format(news.publishTime, 'yyyy-MM-dd')}">
                                     2019-03-04
                                 </span>
                             </a>
@@ -78,20 +80,20 @@
             , layout: ['prev', 'page', 'next', 'count']
             , limit: 6
             , theme: '#1e9fff'
-            , jump: function (obj,first) {
+            , jump: function (obj, first) {
                 //首次不执行
-                if(!first){
+                if (!first) {
                     var url = path + "/news/list/" + [[${navId}]] + "/" + [[${itId}]] + "/" + obj.curr;
                     $.get(url, function (data) {
                         console.log(data);
                         var inf = "";
                         var go;
                         var pushTime;
-                        $.each(data.list,function (i,v) {
-                            go = path+'/news/detail/'+v.id;
+                        $.each(data.list, function (i, v) {
+                            go = path + '/news/detail/' + v.id;
                             pushTime = new Date(v.publishTime);
-                            pushTime = pushTime.getFullYear()+'-'+(pushTime.getMonth()+1)+'-'+pushTime.getDate();
-                            inf +='<li><a href="'+go+'"><span class="layui-col-xs8 layui-col-sm9 layui-col-md10 menu_title">'+v.title+'</span><span class="layui-col-xs4 layui-col-sm3 layui-col-md2 txt_center">'+pushTime+'</span></a></li>'
+                            pushTime = pushTime.getFullYear() + '-' + (pushTime.getMonth() + 1) + '-' + pushTime.getDate();
+                            inf += '<li><a href="' + go + '"><span class="layui-col-xs8 layui-col-sm9 layui-col-md10 menu_title">' + v.title + '</span><span class="layui-col-xs4 layui-col-sm3 layui-col-md2 txt_center">' + pushTime + '</span></a></li>'
                         });
                         $("#main_news").html(inf);
                     });

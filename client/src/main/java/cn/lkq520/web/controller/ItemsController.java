@@ -19,7 +19,7 @@ import java.util.List;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author luo
@@ -28,23 +28,25 @@ import java.util.List;
 @Controller
 @RequestMapping("items")
 public class ItemsController {
-
-    @Autowired private ClubService clubService;
-    @Autowired private NewsService newsService;
-    @Autowired private FileService fileService;
+    @Autowired
+    private ClubService clubService;
+    @Autowired
+    private NewsService newsService;
+    @Autowired
+    private FileService fileService;
 
     @RequestMapping({"/{navId}/{itId}/{currentPage}"})
-    public String item(Model model, @ModelAttribute @PathVariable("navId") Integer navId,@ModelAttribute @PathVariable("itId") Integer itId,
-                        @PathVariable(value = "currentPage") Integer currentPage){
+    public String item(Model model, @ModelAttribute @PathVariable("navId") Integer navId, @ModelAttribute @PathVariable("itId") Integer itId,
+                       @PathVariable(value = "currentPage") Integer currentPage) {
         List<File> fileList = fileService.getListByFileTypeId(4);
-        model.addAttribute("fileList",fileList);
-        if(navId == 5){
-            PageInfo<Club> clubPageInfo = clubService.getByItemId(currentPage,6,itId);
-            model.addAttribute("clubPageInfo",clubPageInfo);
+        model.addAttribute("fileList", fileList);
+        if (navId == 5) {
+            PageInfo<Club> clubPageInfo = clubService.getByItemId(currentPage, 6, itId);
+            model.addAttribute("clubPageInfo", clubPageInfo);
             return "clubList";
-        }else{
-            PageInfo<News> newsInfo = newsService.getPageByNavIdOrItemId(navId,itId,currentPage,6,1);
-            model.addAttribute("newsInfo",newsInfo);
+        } else {
+            PageInfo<News> newsInfo = newsService.getPageByNavIdOrItemId(navId, itId, currentPage, 6, 1);
+            model.addAttribute("newsInfo", newsInfo);
             return "items";
         }
     }
