@@ -35,11 +35,6 @@ public class Club implements Serializable {
     private Integer id;
 
     /**
-     * 社团编号
-     */
-    private Integer num;
-
-    /**
      * 社团名称
      */
     private String name;
