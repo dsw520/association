@@ -1,6 +1,6 @@
 package cn.lkq520.web.mapper;
 
-import cn.lkq520.pojo.FileType;
+import cn.lkq520.pojo.Type;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author luo
  * @since 2020-12-22
  */
-public interface FileTypeMapper extends BaseMapper<FileType> {
+public interface FileTypeMapper extends BaseMapper<Type> {
 
 }

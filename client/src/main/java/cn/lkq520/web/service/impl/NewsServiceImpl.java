@@ -1,6 +1,5 @@
 package cn.lkq520.web.service.impl;
 
-import cn.lkq520.pojo.Club;
 import cn.lkq520.pojo.News;
 import cn.lkq520.web.mapper.NewsMapper;
 import cn.lkq520.web.service.NewsService;
@@ -39,6 +38,43 @@ public class NewsServiceImpl extends ServiceImpl<NewsMapper, News> implements Ne
         queryWrapper.eq("status",status);
         List<News> newsList = newsMapper.selectList(queryWrapper);
         return new PageInfo<>(newsList);
+    }
+
+    @Override
+    public List<News> getListByCludId(int clubId,int passage_type_id,int limit,int status) {
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.select("id","title","publish_time");
+        queryWrapper.eq("club_id",clubId);
+        if (status != -1){
+            queryWrapper.eq("status",status);
+        }
+        if (passage_type_id != -1) {
+            queryWrapper.eq("passage_type_id",passage_type_id);
+        }
+        queryWrapper.orderByDesc("publish_time");
+        queryWrapper.last("limit "+limit);
+        return newsMapper.selectList(queryWrapper);
+    }
+
+    @Override
+    public List<News> getListByNavId(int navId, int clubId, int passage_type_id, int limit, int status) {
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.select("id","title","publish_time");
+        if(navId != -1){
+            queryWrapper.eq("nav_id",navId);
+        }
+        if(clubId != -1){
+            queryWrapper.eq("club_id",clubId);
+        }
+        if (status != -1){
+            queryWrapper.eq("status",status);
+        }
+        if (passage_type_id != -1) {
+            queryWrapper.eq("passage_type_id",passage_type_id);
+        }
+        queryWrapper.orderByDesc("publish_time");
+        queryWrapper.last("limit "+limit);
+        return newsMapper.selectList(queryWrapper);
     }
 
 }

@@ -55,42 +55,22 @@
                             <div class="layui-tab-item layui-show">
                                 <div class="tab_box">
                                     <ul>
-                                        <li class="menu_title">
-                                            <a href="">关于2019年寒假期间实验室使用019年寒假期间实验室使啊实打实的</a>
-                                        </li>
-                                        <li class="menu_title">
-                                            <a href="">关于2018-2019学年第一学期实验室软件安...</a>
-                                        </li>
-                                        <li class="menu_title">
-                                            <a href="">关于2018年暑假期间实验室开放安排的通...</a>
-                                        </li>
-                                        <li class="menu_title">
-                                            <a href="">关于2017-2018学年第二学期实验室软件安...</a>
-                                        </li>
-                                        <li class="menu_title">
-                                            <a href="">关于2018年寒假期间实验室开放安排的通...</a>
-                                        </li>
-                                        <li class="menu_title">
-                                            <a href="">关于一体化课程期末上机考试安排的通知</a>
-                                        </li>
-                                        <li class="menu_title">
-                                            <a href="">关于2017-2018学年第二学期实验室软件安...</a>
-                                        </li>
-                                        <li class="menu_title">
-                                            <a href="">关于2018年寒假期间实验室开放安排的通...</a>
-                                        </li>
+                                        <th:block th:each="news : ${newsList}">
+                                            <li class="menu_title">
+                                                <a href="" th:href="@{'/news/detail/'+${news.id}}" th:text="${news.title}">关于2019年寒假期间实验室使用019年寒假期间实验室使啊实打实的</a>
+                                            </li>
+                                        </th:block>
                                     </ul>
                                 </div>
                             </div>
                             <div class="layui-tab-item">
                                 <div class="tab_box">
                                     <ul>
-                                        <li class="menu_title">
-                                            <a href="">关于2019年寒假期间实验室使用019年寒假期间实验室使啊实打实的</a>
-                                        </li>
-                                        <li class="menu_title">
-                                            <a href="">关于2018-2019学年第一学期实验室软件安...</a>
-                                        </li>
+                                        <th:block th:each="news : ${presentList}">
+                                            <li class="menu_title">
+                                                <a href="" th:href="@{'/news/detail/'+${news.id}}" th:text="${news.title}">关于2019年寒假期间实验室使用019年寒假期间实验室使啊实打实的</a>
+                                            </li>
+                                        </th:block>
                                     </ul>
                                 </div>
                             </div>
@@ -110,36 +90,10 @@
                     </div>
                     <div class="layui-row index_card main_conRa">
                         <ul>
-                            <li>
-                                <a href=""><span
-                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
-                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
-                            </li>
-                            <li>
-                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
-                                        class="layui-col-xs4 txt_right">2018-12-13</span></a>
-                            </li>
-                            <li>
-                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
-                                        class="layui-col-xs4 txt_right">2018-06-02</span></a>
-                            </li>
-                            <li>
-                                <a href=""><span
-                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
-                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
-                            </li>
-                            <li>
-                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
-                                        class="layui-col-xs4 txt_right">2018-12-13</span></a>
-                            </li>
-                            <li>
-                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
-                                        class="layui-col-xs4 txt_right">2018-06-02</span></a>
-                            </li>
-                            <li>
-                                <a href=""><span
-                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
-                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
+                            <li th:each="activity : ${activityList}">
+                                <a href="">
+                                    <span class="layui-col-xs8 menu_title" th:text="${activity.activityName}">计算机学院（软件学院）实验室组织2019年度安全教育培训</span>
+                                    <span class="layui-col-xs4 txt_right" th:text="${#dates.format(activity.holdTime,'yyyy-MM-dd')}">2019-03-04</span></a>
                             </li>
                         </ul>
                     </div>
@@ -155,36 +109,10 @@
                     </div>
                     <div class="layui-row index_card main_conRa">
                         <ul>
-                            <li>
-                                <a href=""><span
-                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
-                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
-                            </li>
-                            <li>
-                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
-                                        class="layui-col-xs4 txt_right">2018-12-13</span></a>
-                            </li>
-                            <li>
-                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
-                                        class="layui-col-xs4 txt_right">2018-06-02</span></a>
-                            </li>
-                            <li>
-                                <a href=""><span
-                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
-                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
-                            </li>
-                            <li>
-                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心组织“实验室文化建设方案”讨论</span><span
-                                        class="layui-col-xs4 txt_right">2018-12-13</span></a>
-                            </li>
-                            <li>
-                                <a href=""><span class="layui-col-xs8 menu_title">软件工程实验中心2018届实习生进行工作总结汇报</span><span
-                                        class="layui-col-xs4 txt_right">2018-06-02</span></a>
-                            </li>
-                            <li>
-                                <a href=""><span
-                                        class="layui-col-xs8 menu_title">计算机学院（软件学院）实验室组织2019年度安全教育培训</span><span
-                                        class="layui-col-xs4 txt_right">2019-03-04</span></a>
+                            <li th:each="style : ${styleList}">
+                                <a href="" th:href="@{'/news/detail/'+${style.id}}">
+                                    <span class="layui-col-xs8 menu_title" th:text="${style.title}">计算机学院（软件学院）实验室组织2019年度安全教育培训</span>
+                                    <span class="layui-col-xs4 txt_right" th:text="${#dates.format(style.publishTime, 'yyyy-MM-dd')}">2019-03-04</span></a>
                             </li>
                         </ul>
                     </div>
